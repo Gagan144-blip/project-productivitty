@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>Productivity Dashboard</h1>
+            <p class="date-display" id="currentDate"></p>
+        </header>
+
+        <main class="dashboard-main">
+            <!-- Stats Section -->
+            <section class="stats-section">
+                <div class="stat-card">
+                    <h3>Tasks Completed</h3>
+                    <p class="stat-number" id="tasksCompleted">0</p>
+                    <p class="stat-label">Today</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Tasks Pending</h3>
+                    <p class="stat-number" id="tasksPending">0</p>
+                    <p class="stat-label">Remaining</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Productivity</h3>
+                    <p class="stat-number" id="productivityScore">0%</p>
+                    <p class="stat-label">Score</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Focus Time</h3>
+                    <p class="stat-number" id="focusTime">0h 0m</p>
+                    <p class="stat-label">Today</p>
+                </div>
+            </section>
+
+            <!-- Task Management Section -->
+            <section class="task-section">
+                <div class="task-panel">
+                    <h2>Task Manager</h2>
+                    <form id="taskForm" class="task-form">
+                        <input type="text" id="taskInput" placeholder="Add a new task..." required>
+                        <select id="taskPriority">
+                            <option value="low">Low Priority</option>
+                            <option value="medium" selected>Medium Priority</option>
+                            <option value="high">High Priority</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary">Add Task</button>
+                    </form>
+                    <ul id="taskList" class="task-list"></ul>
+                </div>
+
+                <!-- Focus Timer Section -->
+                <div class="timer-panel">
+                    <h2>Focus Timer</h2>
+                    <div class="timer-display" id="timerDisplay">25:00</div>
+                    <div class="timer-controls">
+                        <button id="startTimer" class="btn btn-success">Start</button>
+                        <button id="pauseTimer" class="btn btn-warning" disabled>Pause</button>
+                        <button id="resetTimer" class="btn btn-danger">Reset</button>
+                    </div>
+                    <div class="timer-presets">
+                        <button class="preset-btn" data-minutes="25">25 min</button>
+                        <button class="preset-btn" data-minutes="15">15 min</button>
+                        <button class="preset-btn" data-minutes="5">5 min</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Goals Section -->
+            <section class="goals-section">
+                <h2>Daily Goals</h2>
+                <div class="goals-container">
+                    <div class="goal-item">
+                        <label>
+                            <input type="checkbox" id="goal1">
+                            <span>Complete 5 tasks</span>
+                        </label>
+                        <div class="goal-progress">
+                            <div class="progress-bar" id="goal1Progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="goal-item">
+                        <label>
+                            <input type="checkbox" id="goal2">
+                            <span>Focus for 2 hours</span>
+                        </label>
+                        <div class="goal-progress">
+                            <div class="progress-bar" id="goal2Progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="goal-item">
+                        <label>
+                            <input type="checkbox" id="goal3">
+                            <span>No distractions for 1 hour</span>
+                        </label>
+                        <div class="goal-progress">
+                            <div class="progress-bar" id="goal3Progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="dashboard-footer">
+            <p>Stay focused. Stay productive.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
